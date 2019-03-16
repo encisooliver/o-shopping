@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sign up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+        
+  <ion-item>
+    <ion-input placeholder="First Name"></ion-input>
+    <ion-icon name="person"></ion-icon>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Last Name"></ion-input>
+    <ion-icon name="person"></ion-icon>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Username"></ion-input>
+    <ion-icon name="person"></ion-icon>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Email"></ion-input>
+    <ion-icon name="mail"></ion-icon> 
+  </ion-item>
+  <ion-item >
+    <ion-input placeholder="Password"></ion-input>
+    <ion-icon name="key"></ion-icon>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      <strong style="color:black">Select</strong>
+    </ion-label>
+    <ion-select value="{{boardNo}}">
+      <ion-select-option *ngFor="let board of remainingBoards" value="{{board}}">{{board}}</ion-select-option>
+    </ion-select>
+  </ion-item>  
+  <!-- <ion-radio-group>
+      <ion-item>
+        <ion-label>Seller</ion-label>
+        <ion-radio slot="end" value="biff" checked></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Buyer</ion-label>
+        <ion-radio slot="end" value="griff"></ion-radio>
+      </ion-item>
+  </ion-radio-group> -->
+  <ion-button class="btn">Sign-up</ion-button>
+</ion-content>
