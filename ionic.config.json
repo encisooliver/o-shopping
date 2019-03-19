@@ -1,5 +1,7 @@
 {
   "name": "o-shopping",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
