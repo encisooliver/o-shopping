@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Inventory
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ng-container *ngIf="!products || products.length == 0">
+          <div *ngFor="let n of [0,1,2]" padding>
+            <ion-skeleton-text ></ion-skeleton-text>
+            <p>
+              <ion-skeleton-text class="fake-skeleton"></ion-skeleton-text>
+            </p>
+          </div>
+        </ng-container>
+
+        <ion-item-sliding *ngFor="let item of products">
+          <ion-item lines="set" button (click)="getProductId(item.id)">
+              <ion-label>
+                  {{ item.productname }}
+                  <h4>Code: {{ item.productcode }}</h4>
+                  <p>{{ item.createdat | date:'short' }}</p>
+              </ion-label>
+              <ion-note slot="end" color="primary">Qty. {{ item.quantity }}
+                <br>Cat. {{ item.category }} 
+                <br>Display: {{item.displayinstore}}</ion-note>
+          </ion-item>
+
+          <ion-item-options side="end">
+            <ion-item-option (click)="removeProduct(item)" color="primary">
+              <ion-icon name="trash" slot="end"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+          
+        </ion-item-sliding>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="newProduct()" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <!-- <ion-fab-button routerLink="product" routerDirection="forward">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button> -->
+  </ion-fab>
+</ion-content>
+

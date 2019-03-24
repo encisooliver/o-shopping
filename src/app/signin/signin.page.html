@@ -6,15 +6,23 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-input placeholder="Email" [(ngModel)]="email"></ion-input>
+    <ion-input placeholder="Email" [(ngModel)]="user.email"></ion-input>
     <ion-icon name="mail"></ion-icon>
   </ion-item>
   <ion-item>
-    <ion-input placeholder="Password" [(ngModel)]="password"></ion-input>
+    <ion-input placeholder="Password" [(ngModel)]="user.password"></ion-input>
     <ion-icon name="key"></ion-icon>
   </ion-item>
+  <ion-item>
+    <ion-label>Select</ion-label>
+    <ion-select placeholder="User" [(ngModel)]="user.userType">
+      <ion-select-option value="Seller">Seller</ion-select-option>
+      <ion-select-option value="Buyer">Buyer</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
  
-    <ion-button (click)="register(email, password)" >Register</ion-button>
-    <ion-button (click)="login(email, password)" >Log-in</ion-button>
+    <ion-button (click)="register()">Register</ion-button>
+    <ion-button (click)="login()">Login</ion-button>
   
 </ion-content>

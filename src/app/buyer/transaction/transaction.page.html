@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-toolbar>
+      
+      <ion-title>
+          <ion-icon name="arrow-round-back" routerLink="/o-shopping-buyer/buyer/market"> </ion-icon>
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+  
+          <ion-item>
+              <ion-label>
+                  {{ product.productname }}
+                  <h4>{{ product.productcode }}</h4>
+                  <p>Discount {{ product.discount }}</p>
+                  <p>Price {{ product.price }}</p>
+                  <p>Description: {{ product.description }}</p>
+                  <p>Total Amount: {{product.price - product.description }}</p>
+              </ion-label>
+                <ion-note slot="end" color="primary">Qty. {{ product.quantity }}<br>Cat. {{ product.category }} </ion-note>
+          </ion-item>
+          <ion-item>
+            <ion-label>Paid Amount: </ion-label>
+            <ion-input placeholder="Amount" [(ngModel)]="transactionModel.amountpaid"></ion-input>
+            <ion-icon name="add"></ion-icon>
+          </ion-item>
+        <ion-item>
+            <ion-input placeholder="UserId" [(ngModel)]="transactionModel.buyerid"></ion-input>
+            <ion-icon name="add"></ion-icon>
+          </ion-item>
+          <ion-item>
+              <ion-input placeholder="UserName" [(ngModel)]="transactionModel.buyername"></ion-input>
+              <ion-icon name="add"></ion-icon>
+            </ion-item>
+          <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+              <ion-fab-button (click)="btnTransaction()">
+                <ion-icon name="checkmark"></ion-icon>
+              </ion-fab-button>
+          </ion-fab>
+  </ion-content>
+  

@@ -1,49 +1,44 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TabsPage } from './tabs.page';
+import { BuyerTabsPageModule } from './buyertabs.module';
 
 const routes: Routes = [
   {
-    path: 'software',
-    component: TabsPage,
+    path: 'buyer',
+    component: BuyerTabsPageModule,
     children: [
       {
-        path: 'tab1',
+        path: 'home',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../profile/tab1.module#HomePageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'market',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
-          }
-        ]
-      },
-      {
-        path: 'tab3',
-        children: [
+            loadChildren: '../store/tab2.module#StorePageModule'
+          },
           {
-            path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            path: 'transaction/:id', 
+            loadChildren: '../transaction/transaction.module#TransactionPageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: 'software/tab1',
+        redirectTo: 'buyer/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: 'software/tab1',
+    redirectTo: 'buyer/home',
     pathMatch: 'full'
   }
 ];
@@ -54,4 +49,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class BuyerTabsPageRoutingModule {}

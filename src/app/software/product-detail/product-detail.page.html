@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-title>
+        <ion-icon name="arrow-round-back" routerLink="/o-shopping/software/inventory"> </ion-icon>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item>
+        <ion-input placeholder="Product Code" [(ngModel)]="product.productcode"></ion-input>
+        <ion-icon name="add"></ion-icon>
+    </ion-item>
+      <ion-item>
+        <ion-input placeholder="Product Name" [(ngModel)]="product.productname"></ion-input>
+        <ion-icon name="add"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-textarea placeholder="Description" [(ngModel)]="product.description"></ion-textarea>
+        <ion-icon name="add"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label>Price: </ion-label>
+        <ion-input placeholder="Price" [(ngModel)]="product.price"></ion-input>
+        <ion-icon name="add"></ion-icon>
+      </ion-item>
+      <ion-item>
+          <ion-label>Discount: </ion-label>
+        <ion-input placeholder="Discount" [(ngModel)]="product.discount"></ion-input>
+        <ion-icon name="add"></ion-icon> 
+      </ion-item>
+      <ion-item>
+          <ion-label>Quantity: </ion-label>
+          <ion-input placeholder="Quantity" [(ngModel)]="product.quantity"></ion-input>
+          <ion-icon name="add"></ion-icon> 
+      </ion-item>
+      <ion-item>
+        <ion-label>Category</ion-label>
+        <ion-select placeholder="Gender" [(ngModel)]="product.category">
+          <ion-select-option value="Male">Male</ion-select-option>
+          <ion-select-option value="Female">Female</ion-select-option>
+        </ion-select>
+      </ion-item>  
+      <ion-item>
+          <ion-label>Display</ion-label>
+          <ion-select placeholder="" [(ngModel)]="product.displayinstore">
+            <ion-select-option value="true">true</ion-select-option>
+            <ion-select-option value="false">false</ion-select-option>
+          </ion-select>
+        </ion-item> 
+        <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+            <ion-fab-button (click)="btnSaveProduct()">
+              <ion-icon name="checkmark"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+</ion-content>
