@@ -1,1 +1,1 @@
-# o-shopping
+# shopping-app
